@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Something For You ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div class="hearts"></div>
+
+    <main class="card">
+
+        <!-- PAGE 1 -->
+        <section id="page1" class="page active">
+
+            <div class="emoji">💌</div>
+
+            <h1>3asoultyyy 👀❤️</h1>
+
+            <p>
+                3andi lik choiya sou2elet...
+            </p>
+
+            <p class="small-text">
+                w lezmek tjewebni b sara7a 😌
+            </p>
+
+            <button class="main-btn" onclick="nextPage(2)">
+                behy nawwarty ❤️
+            </button>
+
+        </section>
+
+
+        <!-- PAGE 2 -->
+        <section id="page2" class="page">
+
+            <div class="emoji">🥺</div>
+
+            <h1>Aham sou2el...</h1>
+
+            <p>
+                Theb nawartek ??? ❤️
+            </p>
+
+            <div class="buttons">
+
+                <button class="yes-btn" onclick="nextPage(3)">
+                    EY ❤️
+                </button>
+
+                <button id="noBtn">
+                    Le 😭
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PAGE 3 -->
+        <section id="page3" class="page">
+
+            <div class="emoji">🤨</div>
+
+            <h1>Stana Stana...</h1>
+
+            <p>
+                Chnowa eli <b>"EY"</b>??? 👀
+            </p>
+
+            <p class="small-text">
+                MAFHEMTCH CHNIA ELI EY 😌
+            </p>
+            
+
+
+    <textarea
+        id="loveAnswer"
+        placeholder="Tell me what you mean... ❤️"
+        rows="4"
+    ></textarea>
+
+    <button class="main-btn" onclick="checkLoveAnswer()">
+        Submit ❤️
+    </button>
+
+    <p id="q3Message" class="small-text"></p>
+
+</section>
+
+
+<!-- PAGE 4 - HOW MUCH -->
+<section id="page4" class="page">
+
+    <div class="emoji">👀❤️</div>
+
+    <h1>9adehhh thebni ??</h1>
+
+<div class="messy-buttons">
+
+        <button onclick="goToSlider()" class="messy-btn btn1">
+            BARCHA❤️
+        </button>
+
+        <button onclick="goToSlider()" class="messy-btn btn2">
+            BARCHA❤️
+        </button>
+
+        <button onclick="goToSlider()" class="messy-btn btn3">
+            BARCHA❤️
+        </button>
+
+        <button onclick="goToSlider()" class="messy-btn btn4">
+            BARCHA❤️
+        </button>
+
+        <button onclick="goToSlider()" class="messy-btn btn5">
+            BARCHA❤️
+        </button>
+
+        <button onclick="goToSlider()" class="messy-btn btn6">
+            BARCHA❤️
+        </button>
+
+        <button onclick="goToSlider()" class="messy-btn btn7">
+            BARCHA❤️
+        </button>
+
+        <button onclick="goToSlider()" class="messy-btn btn8">
+            BARCHA❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+
+
+        <!-- PAGE 4 -->
+<!-- PAGE 4 -->
+<section id="page5" class="page">
+
+    <div class="emoji">🥰</div>
+
+    <h1> 9ADEH EL BARCHA?</h1>
+
+
+    <div class="love-meter">
+
+        <input
+            type="range"
+            id="loveSlider"
+            min="0"
+            max="100"
+            value="10"
+        >
+
+
+
+    </div>
+
+    <p id="loveAmount">
+        10% 😭
+    </p>
+
+    <p id="loveMessage" class="small-text">
+        9ADEH ??? 👀
+    </p>
+
+    <button
+        id="loveContinue"
+        class="main-btn"
+        onclick="nextPage(6)"
+        style="display: none;"
+    >
+        mmmmm melaaaa ❤️
+    </button>
+
+</section>
+
+
+        <!-- PAGE 5 -->
+        <section id="page6" class="page">
+
+            <div class="emoji">🤗</div>
+
+            <h1>Nheb nra 9adeh. 😌</h1>
+
+
+            <p class="big-text">
+                Warini b ydik 9adeh ... 🤗❤️
+            </p>
+
+
+            <button class="main-btn" onclick="showHugQuestion()">
+                haaaakaaaa.... 🤗
+            </button>
+
+        </section>
+
+
+        <!-- HUG QUESTION -->
+        <section id="hugQuestion" class="page">
+
+            <div class="emoji">👀</div>
+
+            <h1>Hmmmm...</h1>
+
+            <p>
+                Taw berasmi 7alit ydik wala kel 3ada? 🤨
+            </p>
+
+            <div class="buttons">
+
+                <button class="yes-btn" onclick="showBigHug()">
+                    wallah y nawarty 🤗❤️
+                </button>
+
+                <button id="hugNoBtn">
+                    hhhhh taw hetha klem ? (le) 😭
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- BIG HUG -->
+        <section id="bigHug" class="page">
+
+            <div class="emoji hug">🤗</div>
+
+            <h1>ayy 7el 7el akther. 😌</h1>
+
+
+            <button class="main-btn" onclick="showFinal()">
+                cbn nawarty 🤗❤️
+            </button>
+
+        </section>
+
+
+        <!-- FINAL PAGE -->
+        <section id="final" class="page">
+
+            <div class="emoji final-heart">❤️</div>
+
+            <h1>Sa7it 3asouola. 🥹</h1>
+
+            <p>
+                Y ROU7 9ALBI ENA            </p>
+
+            <p>
+                NA3REF ELI ENTI T7EBNI AMA N7EB NASMA3HA KOL YOUM
+            </p>
+
+            <p class="love-message">
+                RABI Y5ALIK LEYA Y 3ASOULTY...
+            </p>
+
+            <h2>
+                7ATA ENA NHEBEK BAAARCHA Y ROU7Y❤️❤️❤️
+            </h2>
+
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
