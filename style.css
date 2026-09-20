@@ -1,0 +1,534 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #ffd6e7,
+        #fff0f6,
+        #ffe4ef
+    );
+
+    overflow: hidden;
+}
+
+
+/* Main card */
+
+.card {
+    width: 90%;
+    max-width: 500px;
+
+    min-height: 520px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border-radius: 30px;
+
+    padding: 45px 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(255, 79, 129, 0.2);
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* Pages */
+
+.page {
+    display: none;
+
+    width: 100%;
+
+    animation: fadeIn 0.5s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+
+/* Text */
+
+h1 {
+    color: #ff4f81;
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #ff4f81;
+
+    line-height: 1.5;
+}
+
+p {
+    color: #555;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+}
+
+.small-text {
+    font-size: 16px;
+
+    color: #999;
+}
+
+.big-text {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #ff4f81;
+}
+
+.love-message {
+    font-size: 22px;
+
+    color: #ff4f81;
+}
+
+
+/* Emoji */
+
+.emoji {
+    font-size: 65px;
+
+    margin-bottom: 10px;
+}
+
+.hug {
+    font-size: 80px;
+}
+
+.final-heart {
+    font-size: 90px;
+
+    animation: heartbeat 1.2s infinite;
+}
+
+
+/* Buttons */
+
+button {
+    border: none;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+
+/* Main button */
+
+.main-btn {
+    background: #ff4f81;
+
+    color: white;
+
+    margin-top: 20px;
+
+    box-shadow: 0 5px 15px rgba(255, 79, 129, 0.3);
+}
+
+
+/* Yes */
+
+.yes-btn {
+    background: #ff4f81;
+
+    color: white;
+}
+
+
+/* No */
+
+#noBtn,
+#hugNoBtn {
+    background: #eeeeee;
+
+    color: #555;
+
+    position: relative;
+
+    transition:
+        left 0.15s ease,
+        top 0.15s ease;
+}
+
+
+/* Button container */
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    min-height: 80px;
+}
+
+
+/* Answer choices */
+
+.answer-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.answer-list button {
+    background: #fff0f5;
+
+    color: #ff4f81;
+
+    border: 2px solid #ffd0df;
+
+    width: 100%;
+}
+
+.answer-list button:hover {
+    background: #ffdce9;
+}
+
+
+/* Floating hearts */
+
+.heart {
+    position: fixed;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    animation: floatHeart linear forwards;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* Animations */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.15);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes floatHeart {
+
+    from {
+        transform: translateY(0) rotate(0deg);
+
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* Phone */
+
+@media (max-width: 600px) {
+
+    .card {
+        width: 92%;
+
+        min-height: 500px;
+
+        padding: 35px 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .emoji {
+        font-size: 55px;
+    }
+
+    button {
+        font-size: 16px;
+
+        padding: 12px 20px;
+    }
+}
+
+/* =========================
+   BIG LOVE METER
+========================= */
+
+.love-meter {
+    width: 100%;
+    margin-top: 45px;
+    padding: 0 5px;
+}
+
+#loveSlider {
+    width: 100%;
+    height: 25px;
+
+    cursor: pointer;
+
+    accent-color: #ff4f81;
+}
+
+/* Make the slider thumb BIG */
+
+#loveSlider::-webkit-slider-thumb {
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+
+    appearance: none;
+
+    background: #ff4f81;
+
+    border-radius: 50%;
+
+    border: 5px solid white;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+#loveSlider::-moz-range-thumb {
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+
+    background: #ff4f81;
+
+    border-radius: 50%;
+
+    border: 5px solid white;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Labels */
+
+.meter-labels {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #ff4f81;
+}
+
+
+/* Percentage */
+
+#loveAmount {
+    font-size: 40px;
+
+    font-weight: bold;
+
+    color: #ff4f81;
+
+    margin: 35px 0 10px;
+}
+
+
+/* Message */
+
+#loveMessage {
+    font-size: 20px;
+
+    min-height: 40px;
+}
+
+/* =========================
+   QUESTION 3 - TEXT ANSWER
+========================= */
+
+#loveAnswer {
+    width: 100%;
+    max-width: 450px;
+    margin-top: 25px;
+    padding: 18px;
+    border: 2px solid #ffd0df;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    resize: none;
+    outline: none;
+    color: #555;
+    background: #fff9fb;
+}
+
+#loveAnswer:focus {
+    border-color: #ff4f81;
+    box-shadow: 0 0 10px rgba(255, 79, 129, 0.15);
+}
+
+#q3Message {
+    min-height: 30px;
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.messy-buttons {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.messy-btn {
+    position: absolute;
+    background: #fff0f5;
+    color: #ff4f81;
+    border: 2px solid #ffd0df;
+    font-weight: bold;
+    box-shadow: 0 5px 12px rgba(255, 79, 129, 0.15);
+}
+
+/* Random-looking positions */
+
+.btn1 {
+    top: 10px;
+    left: 5%;
+    transform: rotate(-8deg);
+}
+
+.btn2 {
+    top: 5px;
+    right: 5%;
+    transform: rotate(7deg);
+}
+
+.btn3 {
+    top: 80px;
+    left: 25%;
+    transform: rotate(4deg);
+}
+
+.btn4 {
+    top: 105px;
+    right: 10%;
+    transform: rotate(-10deg);
+}
+
+.btn5 {
+    top: 160px;
+    left: 2%;
+    transform: rotate(6deg);
+}
+
+.btn6 {
+    top: 180px;
+    left: 45%;
+    transform: rotate(-5deg);
+}
+
+.btn7 {
+    top: 220px;
+    right: 2%;
+    transform: rotate(9deg);
+}
+
+.btn8 {
+    top: 240px;
+    left: 20%;
+    transform: rotate(-7deg);
+}
+
+.messy-btn:hover {
+    transform: scale(1.08) rotate(0deg);
+}
